@@ -1,0 +1,80 @@
+{
+  "accuracy": [
+    {
+      "scheme": "per-tensor",
+      "bits": 8,
+      "snr_db": 18.09,
+      "mse": 2.1625866793328896e-05,
+      "max_abs_err": 0.008056001737713814
+    },
+    {
+      "scheme": "per-tensor",
+      "bits": 6,
+      "snr_db": 6.8,
+      "mse": 0.0002908841415774077,
+      "max_abs_err": 0.033003661781549454
+    },
+    {
+      "scheme": "per-tensor",
+      "bits": 4,
+      "snr_db": 5.15,
+      "mse": 0.0004260932037141174,
+      "max_abs_err": 0.14585120975971222
+    },
+    {
+      "scheme": "per-tensor",
+      "bits": 3,
+      "snr_db": 4.01,
+      "mse": 0.0005531902424991131,
+      "max_abs_err": 0.34082239866256714
+    },
+    {
+      "scheme": "per-channel",
+      "bits": 8,
+      "snr_db": 42.65,
+      "mse": 7.574858784664684e-08,
+      "max_abs_err": 0.008034110069274902
+    },
+    {
+      "scheme": "per-channel",
+      "bits": 6,
+      "snr_db": 30.6,
+      "mse": 1.214435201291053e-06,
+      "max_abs_err": 0.03280511125922203
+    },
+    {
+      "scheme": "per-channel",
+      "bits": 4,
+      "snr_db": 17.71,
+      "mse": 2.3626567781320773e-05,
+      "max_abs_err": 0.1452573835849762
+    },
+    {
+      "scheme": "per-channel",
+      "bits": 3,
+      "snr_db": 10.35,
+      "mse": 0.0001285559410462156,
+      "max_abs_err": 0.34055694937705994
+    }
+  ],
+  "memory_7b": [
+    {
+      "format": "fp16/bf16",
+      "bits": 16,
+      "weight_gib": 13.04,
+      "shrink_vs_fp16": 1.0
+    },
+    {
+      "format": "fp8",
+      "bits": 8,
+      "weight_gib": 6.52,
+      "shrink_vs_fp16": 2.0
+    },
+    {
+      "format": "int4",
+      "bits": 4,
+      "weight_gib": 3.26,
+      "shrink_vs_fp16": 4.0
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+# L6 home assignment — Quantization + BF16 vs on-the-fly 8-bit serving.
+# Use a FRESH virtualenv. Install on your GPU box (H100 or L40S) for Q2.
+#
+# vLLM pins its own compatible torch build, so we do NOT pin torch separately
+# (pinning both is the usual source of CUDA/torch conflicts). Install vLLM first,
+# let it bring torch, then the rest.
+# Q2's quantized config is GPU-adaptive: `--quantization fp8` on an H100 (needs Hopper),
+# `--quantization int8_per_channel_weight_only` on an L40S / non-FP8 GPU. The int8 method is
+# recent, so use a current vLLM. If your build rejects it, `vllm serve --help | grep -i
+# quantization` lists what it supports (see INSTRUCTOR.md for the W8A8-checkpoint fallback).
+
+vllm>=0.24.0          # latest; older releases may not have int8_per_channel_weight_only
+guidellm==0.7.1       # `guidellm run` CLI (0.7.x). 0.4.x breaks against the transformers vllm pulls.
+matplotlib==3.9.2
+numpy>=1.26
+jupyterlab==4.2.5
+ipykernel==6.29.5
+
+# Q1 is pure PyTorch and runs anywhere (CPU is fine for the self-check).
+# Q2 requires a GPU (H100 or L40S). If you only want to smoke-test Q1 without vLLM:
+# pip install torch matplotlib jupyterlab ipykernel
